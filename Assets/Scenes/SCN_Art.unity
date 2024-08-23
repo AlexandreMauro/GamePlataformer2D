@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180898293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -106.9, y: -1.9787, z: 0}
+  m_LocalPosition: {x: -106.9, y: 0.5, z: 0}
   m_LocalScale: {x: 1.8638357, y: 1.4187791, z: 0.039984506}
   m_Children:
   - {fileID: 608379697}
@@ -379,7 +379,7 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388782692}
   m_Enabled: 1
-  m_SortingLayerID: 2097750727
+  m_SortingLayerID: 310229691
   m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!1 &394303427
@@ -1634,7 +1634,7 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207329805}
   m_Enabled: 1
-  m_SortingLayerID: 2097750727
+  m_SortingLayerID: 310229691
   m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!1 &1216257641
@@ -2042,7 +2042,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2066,7 +2066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -25.4}
+  m_LocalPosition: {x: 0, y: 4.1, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3083,7 +3083,7 @@ Transform:
   m_GameObject: {fileID: 1812774649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 43.9, y: -9.700001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1794, z: 1}
   m_Children: []
   m_Father: {fileID: 1149129669}
   m_RootOrder: 2
@@ -3222,7 +3222,7 @@ Transform:
   m_GameObject: {fileID: 1849393367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.1451, y: 2.0673, z: 0}
-  m_LocalScale: {x: 5.8490787, y: 1.1329023, z: 0.044630546}
+  m_LocalScale: {x: 5.8490787, y: 1.7166868, z: 0.044630546}
   m_Children: []
   m_Father: {fileID: 1149129669}
   m_RootOrder: 1
@@ -3296,7 +3296,7 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869982225}
   m_Enabled: 1
-  m_SortingLayerID: 2097750727
+  m_SortingLayerID: 310229691
   m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!1 &1877822786
