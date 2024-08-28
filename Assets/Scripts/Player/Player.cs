@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D PlayerRigibody;
 
+    public Animator animator;
+    public string BoolWalk = "Walk";
+
+
     [Header("Animation Setup")]
     public float JumpScaleY = 1.3f;
     public float JumpScaleX = .7f;
@@ -44,24 +48,25 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            // PlayerRigibody.MovePosition(PlayerRigibody.position + Velocity * Time.deltaTime);
+           
             PlayerRigibody.velocity = new Vector2(_currentSpeed, PlayerRigibody.velocity.y);
-
+            animator.SetBool(BoolWalk, true);
+            PlayerRigibody.transform.localScale = new Vector3(1,1,1);
 
         }
 
         else if (Input.GetKey(KeyCode.A))
         {
             PlayerRigibody.velocity = new Vector2(-_currentSpeed, PlayerRigibody.velocity.y);
-            // PlayerRigibody.MovePosition(PlayerRigibody.position - Velocity * Time.deltaTime);
+            animator.SetBool(BoolWalk, true);
+            PlayerRigibody.transform.localScale = new Vector3(-1, 1, 1);
         }
+        else
+        {
+            animator.SetBool(BoolWalk, false);
+        }
+           
         
-
-
-
-
-
-
         if (PlayerRigibody.velocity.x > 0)
             {
                 PlayerRigibody.velocity -= Friction ;
@@ -81,9 +86,26 @@ public class Player : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.W))
         {
             PlayerRigibody.velocity = Vector2.up * jumpforce;
-            PlayerRigibody.transform.localScale = Vector2.one;
             DOTween.Kill(PlayerRigibody.transform);
-            HandleJumpAnimation();
+            //HandleJumpAnimation();
+
+            if (PlayerRigibody.transform.localScale.x > 0)
+            {
+               
+                PlayerRigibody.transform.localScale = new Vector3(1, 1, 1); ;
+
+
+            }
+            else if (PlayerRigibody.transform.localScale.x < 0)
+            {
+                PlayerRigibody.transform.localScale = new Vector3(-1, 1, 1); ;
+            }
+
+
+          
+
+           
+
         }
     }
 
