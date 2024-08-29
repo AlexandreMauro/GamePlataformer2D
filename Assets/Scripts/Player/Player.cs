@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
         {
             PlayerRigibody.velocity = Vector2.up * jumpforce;
             DOTween.Kill(PlayerRigibody.transform);
-            //HandleJumpAnimation();
+            HandleJumpAnimation();
 
             if (PlayerRigibody.transform.localScale.x > 0)
             {
@@ -112,8 +112,8 @@ public class Player : MonoBehaviour
     private void HandleJumpAnimation()
     {
         
-            PlayerRigibody.transform.DOScaleY(JumpScaleY, AnimationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-            PlayerRigibody.transform.DOScaleX(JumpScaleX, AnimationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+            PlayerRigibody.transform.DOScaleY( PlayerRigibody.transform.localScale.y * JumpScaleY, AnimationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+            PlayerRigibody.transform.DOScaleX(PlayerRigibody.transform.localScale.x *JumpScaleX, AnimationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
         
        
 
