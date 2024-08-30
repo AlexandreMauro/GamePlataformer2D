@@ -1,25 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Singelton;
 
-public class ItenManager : MonoBehaviour
+public class ItenManager : Singelton<ItenManager>
 {
     public int coins;
-
-
-    public static ItenManager instance;
-
-    private void Awake()
-    {
-        if(instance ==null)
-        {
-            instance = this;
-
-        }else
-        {
-            Destroy(gameObject);
-        }
-    }
     private void Start()
     {
         Reset();

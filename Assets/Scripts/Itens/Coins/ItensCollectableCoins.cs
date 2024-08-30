@@ -7,6 +7,6 @@ public class ItensCollectableCoins : ItensCollectablesBase
     protected override void OnCollected()
     {
         base.OnCollected();
-        ItenManager.instance.addCoins();
+        ItenManager.Instance.addCoins();
     }
 }

@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
         {
             PlayerRigibody.velocity = Vector2.up * jumpforce;
             DOTween.Kill(PlayerRigibody.transform);
-            HandleJumpAnimation();
+           // HandleJumpAnimation();
 
             if (PlayerRigibody.transform.localScale.x > 0)
             {
