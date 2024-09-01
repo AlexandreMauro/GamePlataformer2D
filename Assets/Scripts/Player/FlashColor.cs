@@ -32,7 +32,7 @@ public class FlashColor : MonoBehaviour
 
     public void flash()
     {
-        if(_currentTween == null)
+        if(_currentTween != null)
         {
 
             _currentTween.Kill();
