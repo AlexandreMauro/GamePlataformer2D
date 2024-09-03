@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 405886450}
   - component: {fileID: 405886449}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CoinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,16 +1014,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405886447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1484860614}
+  m_Father: {fileID: 1897667693}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7400017, y: 0.0000066757}
+  m_AnchoredPosition: {x: -288.91306, y: 174.81203}
   m_SizeDelta: {x: 70.258, y: 28.498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405886449
@@ -2354,9 +2354,9 @@ GameObject:
   - component: {fileID: 954345021}
   - component: {fileID: 954345025}
   - component: {fileID: 954345020}
+  - component: {fileID: 954345024}
   - component: {fileID: 954345019}
   - component: {fileID: 954345023}
-  - component: {fileID: 954345024}
   m_Layer: 0
   m_Name: PFB_Enemy_01_DEV
   m_TagString: Untagged
@@ -2405,6 +2405,7 @@ MonoBehaviour:
   damage: 10
   AttackAnimation: {fileID: 272847367}
   AttackTrigger: Attack
+  KillTrigger: Death
   healthBase: {fileID: 954345025}
 --- !u!210 &954345021
 SortingGroup:
@@ -2472,8 +2473,8 @@ MonoBehaviour:
   - {fileID: 528110053}
   - {fileID: 2012731982}
   - {fileID: 1645337000}
-  Flahcolor: {r: 1, g: 0.2028302, b: 0.2028302, a: 1}
-  duration: 0
+  Flahcolor: {r: 1, g: 0.6179246, b: 0.6179246, a: 1}
+  duration: 0.1
 --- !u!114 &954345025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2486,7 +2487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966137e5fb3a33645b40a6e40da4d3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Startlife: 10
+  Startlife: 3
   DestroyOnKill: 1
   DelayForKill: 0
   _flashColor: {fileID: 954345024}
@@ -2561,6 +2562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  CoinText: {fileID: 405886449}
 --- !u!4 &1024334376
 Transform:
   m_ObjectHideFlags: 0
@@ -3634,7 +3636,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1823168088}
-  - {fileID: 405886448}
   m_Father: {fileID: 1897667693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4667,6 +4668,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1484860614}
+  - {fileID: 405886448}
   m_Father: {fileID: 2037060204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5035,8 +5037,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRigibody: {fileID: 2124366084}
+  _healthBase: {fileID: 2124366088}
   animator: {fileID: 61950202}
   BoolWalk: Walk
+  TriggerDeath: Death
   JumpScaleY: 1
   JumpScaleX: 1
   AnimationDuration: 0.2
@@ -5121,7 +5125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Startlife: 10
   DestroyOnKill: 1
-  DelayForKill: 0.4
+  DelayForKill: 1
   _flashColor: {fileID: 777474855}
 --- !u!210 &2124366089
 SortingGroup:

@@ -6,12 +6,14 @@ using DG.Tweening;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D PlayerRigibody;
-
+    public Health _healthBase;
     public Animator animator;
     public string BoolWalk = "Walk";
+    public string TriggerDeath = "Death";
 
 
     [Header("Animation Setup")]
+
     public float JumpScaleY = 1.3f;
     public float JumpScaleX = .7f;
     public float AnimationDuration=0.3f;
@@ -23,8 +25,27 @@ public class Player : MonoBehaviour
     public float Speed;
     public float RunSpeed;
     private float _currentSpeed;
-    
-    
+
+
+   
+
+    private void Awake()
+    {
+      
+        
+            if (_healthBase != null)
+            {
+                _healthBase.OnKill += OnPlayerKill;
+            }
+       
+    }
+
+    private void OnPlayerKill()
+    {
+        _healthBase.OnKill -= OnPlayerKill;
+        animator.SetTrigger(TriggerDeath);
+    }
+
     private void Update()
     {
         HandleJump();
