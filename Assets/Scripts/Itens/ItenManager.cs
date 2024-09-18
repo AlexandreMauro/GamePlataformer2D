@@ -6,7 +6,7 @@ using Core.Singelton;
 
 public class ItenManager : Singelton<ItenManager>
 {
-    public int coins;
+    public SOInt coins;
     public TextMeshProUGUI CoinText;
 
     private void Start()
@@ -16,15 +16,15 @@ public class ItenManager : Singelton<ItenManager>
 
     private void Reset()
     {
-        coins = 0;
+        coins.value = 0;
     }
 
 
 
     public void addCoins(int amaunt = 1)
     {
-        coins += amaunt;
-        CoinText.text = "X" + " " + coins.ToString();
+        coins.value += amaunt;
+        CoinText.text = "X" + " " + coins.value.ToString();
     }
 }
    

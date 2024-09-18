@@ -2561,7 +2561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d07fe41ee821e44b8ecef75697f99c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: 702f494926eb02744a4ab4414ea87cf0, type: 2}
   CoinText: {fileID: 405886449}
 --- !u!4 &1024334376
 Transform:
@@ -5039,16 +5039,10 @@ MonoBehaviour:
   PlayerRigibody: {fileID: 2124366084}
   _healthBase: {fileID: 2124366088}
   animator: {fileID: 61950202}
-  BoolWalk: Walk
-  TriggerDeath: Death
-  JumpScaleY: 1
-  JumpScaleX: 1
-  AnimationDuration: 0.2
-  ease: 27
-  Friction: {x: 0.2, y: 0}
-  jumpforce: 15
-  Speed: 15
-  RunSpeed: 7
+  soPlayerSetup: {fileID: 11400000, guid: 19dd67ed676c6934f887d456ca0d40d2, type: 2}
+  soJumpScaleX: {fileID: 11400000, guid: b622438dd3c3e2c45a80bc21a1371b67, type: 2}
+  soJumpScaleY: {fileID: 11400000, guid: 77e6cc94847c1ff4786fceee8c558945, type: 2}
+  soAnimationDuration: {fileID: 11400000, guid: 855f53c3b34bb7c4a8afdac63688d3ae, type: 2}
 --- !u!50 &2124366084
 Rigidbody2D:
   serializedVersion: 4

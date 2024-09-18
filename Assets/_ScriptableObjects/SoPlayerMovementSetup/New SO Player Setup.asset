@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9711701db65ed1c4bb6c5c25e67ba7d9, type: 3}
+  m_Name: New SO Player Setup
+  m_EditorClassIdentifier: 
+  ease: 27
+  BoolWalk: Walk
+  TriggerDeath: Death
+  Friction: {x: 0.1, y: 0}
+  jumpforce: 20
+  Speed: 10
+  RunSpeed: 15
