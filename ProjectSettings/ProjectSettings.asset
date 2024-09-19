@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 22
-  productGUID: 32664956b5bf52847976113867c9cbcc
+  productGUID: e339e7a15278e9e4e8dfd0f33fc0e23d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: PlataformGame_2D
+  productName: EBAC_CURSO
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -680,10 +680,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: efb2ffa6-1cd5-4557-aa3f-1aa6b31bda75
+  cloudProjectId: 2f6e8890-dd3e-4355-973a-8ff5cc89ca85
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: PlataformGame_2D
+  projectName: EBAC_CURSO
   organizationId: alexandremauro505
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
