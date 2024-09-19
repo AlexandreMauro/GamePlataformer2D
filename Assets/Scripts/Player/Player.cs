@@ -98,25 +98,24 @@ public class Player : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.W))
         {
             PlayerRigibody.velocity = Vector2.up * soPlayerSetup.jumpforce;
-            DOTween.Kill(PlayerRigibody.transform);
-            HandleJumpAnimation();
+            var result = PlayerRigibody.transform.localScale.x / PlayerRigibody.transform.localScale.x;
 
             if (PlayerRigibody.transform.localScale.x > 0)
             {
-               
-                PlayerRigibody.transform.localScale = new Vector3(1, 1, 1); ;
+
+                PlayerRigibody.transform.localScale = new Vector3(result, 1, 1); ;
 
 
             }
             else if (PlayerRigibody.transform.localScale.x < 0)
             {
-                PlayerRigibody.transform.localScale = new Vector3(-1, 1, 1); ;
+                PlayerRigibody.transform.localScale = new Vector3(-result, 1, 1); ;
             }
 
 
-          
 
-           
+            DOTween.Kill(PlayerRigibody.transform);                    
+            HandleJumpAnimation();
 
         }
     }
@@ -125,10 +124,11 @@ public class Player : MonoBehaviour
     {
         
 
-            PlayerRigibody.transform.DOScaleY( PlayerRigibody.transform.localScale.y * soJumpScaleY.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
+            PlayerRigibody.transform.DOScaleY(PlayerRigibody.transform.localScale.y * soJumpScaleY.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
             PlayerRigibody.transform.DOScaleX(PlayerRigibody.transform.localScale.x * soJumpScaleX.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
-        
        
+      
+
 
     }
 

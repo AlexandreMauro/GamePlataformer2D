@@ -28,4 +28,6 @@ public class ItensCollectablesBase : MonoBehaviour
     {
 
     }
+
+   
 }
