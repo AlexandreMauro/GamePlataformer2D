@@ -21,7 +21,7 @@ public class ItenManager : Singelton<ItenManager>
     private void Reset()
     {
         coins.value = 0;
-        coins2.value = 0;
+        
 
     }
 
