@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public Health _healthBase;
     public Animator animator;
 
-    [Header("PlkayerSetup")]
+    [Header("PlayerSetup")]
     public SOPlayerSetup soPlayerSetup;
 
     [Header("Animation Setup")]
@@ -17,7 +17,14 @@ public class Player : MonoBehaviour
     public SOFloat soJumpScaleY;
     public SOFloat soAnimationDuration;
 
-    
+
+
+    [Header("JumpColisionCheck")]
+    public Collider2D Collider2D;
+    public float DistforGround;
+    public float SpaceforGround = .1f;
+    public ParticleSystem jumpVFX;
+  
 
     private float _currentSpeed;
     private void Awake()
@@ -28,9 +35,21 @@ public class Player : MonoBehaviour
             {
                 _healthBase.OnKill += OnPlayerKill;
             }
-       
+      
+        
+        if(Collider2D == null)
+        {
+            DistforGround = Collider2D.bounds.extents.y;
+        }
     }
 
+  
+    private bool IsGrounded()
+    {
+
+        Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, SpaceforGround);
+       return Physics2D.Raycast(transform.position, -Vector2.up,  SpaceforGround);
+    }
     private void OnPlayerKill()
     {
         _healthBase.OnKill -= OnPlayerKill;
@@ -39,6 +58,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        IsGrounded();
         HandleJump();
         HandleMovements();
     }
@@ -95,10 +115,14 @@ public class Player : MonoBehaviour
     //Jump Code
     private void HandleJump()
     {
-       if(Input.GetKeyDown(KeyCode.W))
+       if(Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
+
             PlayerRigibody.velocity = Vector2.up * soPlayerSetup.jumpforce;
             var result = PlayerRigibody.transform.localScale.x / PlayerRigibody.transform.localScale.x;
+ 
+          
+            
 
             if (PlayerRigibody.transform.localScale.x > 0)
             {
@@ -113,11 +137,16 @@ public class Player : MonoBehaviour
             }
 
 
-
+            JumpVFX();
             DOTween.Kill(PlayerRigibody.transform);                    
             HandleJumpAnimation();
-
+           
         }
+    }
+
+    private void JumpVFX()
+    {
+        VFXManager.Instance.PlayFVXByType(VFXManager.VFXType.Jump,transform.position);
     }
 
     private void HandleJumpAnimation()

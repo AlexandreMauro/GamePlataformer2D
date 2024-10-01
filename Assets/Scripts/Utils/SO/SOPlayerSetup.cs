@@ -17,6 +17,7 @@ public class SOPlayerSetup : ScriptableObject
     [Header("Triggers")]
     public string BoolWalk = "Walk";
     public string TriggerDeath = "Death";
+    public string IntJump = "Jump";
 
     [Header("Speed Config")]
     public Vector2 Friction = new Vector2(.1f, 0);
