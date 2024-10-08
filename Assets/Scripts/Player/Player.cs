@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using DG.Tweening;
 
 public class Player : MonoBehaviour
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     public float DistforGround;
     public float SpaceforGround = .1f;
     public ParticleSystem jumpVFX;
+    public AudioSource JumpSFX;
   
 
     private float _currentSpeed;
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
             PlayerRigibody.velocity = new Vector2(_currentSpeed, PlayerRigibody.velocity.y);
             animator.SetBool(soPlayerSetup.BoolWalk, true);
             PlayerRigibody.transform.localScale = new Vector3(1,1,1);
-
+            animator.SetBool(soPlayerSetup.BoolJump, false);
         }
 
         else if (Input.GetKey(KeyCode.A))
@@ -92,6 +94,7 @@ public class Player : MonoBehaviour
             PlayerRigibody.velocity = new Vector2(-_currentSpeed, PlayerRigibody.velocity.y);
             animator.SetBool(soPlayerSetup.BoolWalk, true);
             PlayerRigibody.transform.localScale = new Vector3(-1, 1, 1);
+            animator.SetBool(soPlayerSetup.BoolJump, false);
         }
         else
         {
@@ -120,9 +123,9 @@ public class Player : MonoBehaviour
 
             PlayerRigibody.velocity = Vector2.up * soPlayerSetup.jumpforce;
             var result = PlayerRigibody.transform.localScale.x / PlayerRigibody.transform.localScale.x;
- 
-          
             
+
+
 
             if (PlayerRigibody.transform.localScale.x > 0)
             {
@@ -136,8 +139,8 @@ public class Player : MonoBehaviour
                 PlayerRigibody.transform.localScale = new Vector3(-result, 1, 1); ;
             }
 
-
-            JumpVFX();
+            JumpSFX.Play();
+            JumpVFX(); 
             DOTween.Kill(PlayerRigibody.transform);                    
             HandleJumpAnimation();
            

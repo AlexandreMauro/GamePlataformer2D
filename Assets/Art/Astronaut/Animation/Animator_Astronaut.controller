@@ -10,8 +10,7 @@ AnimatorState:
   m_Name: ANIM_Astronaut_Jump_Down
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -5585119573350452200}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -90,7 +89,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -622918472392520232}
-  - {fileID: 7492562092604140732}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -142,8 +140,7 @@ AnimatorState:
   m_Name: ANIM_Astronaut_Jump_Up
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -231160698161953338}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -280,8 +277,8 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Jump
-    m_Type: 3
+  - m_Name: Up
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -313,7 +310,7 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3105400265312665223}
-    m_Position: {x: 600, y: -80, z: 0}
+    m_Position: {x: 450, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8775934341210572221}
     m_Position: {x: 460, y: 100, z: 0}

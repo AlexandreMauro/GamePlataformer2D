@@ -7,9 +7,13 @@ public class ItensCollectablesBase : MonoBehaviour
     public string PlayerTag = "Player";
     public ParticleSystem ParticleSystem;
 
+    [Header("Sounds")]
+    public AudioSource audioSource;
+
     private void Awake()
     {
         if (ParticleSystem != null) ParticleSystem.transform.SetParent(null);
+        if (audioSource != null) audioSource.transform.SetParent(null);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,7 +36,9 @@ public class ItensCollectablesBase : MonoBehaviour
     protected virtual void OnCollected()
     {
         if (ParticleSystem != null) ParticleSystem.Play() ;
+        if (audioSource != null) audioSource.Play();
+
     }
 
-   
+
 }

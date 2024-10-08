@@ -4,6 +4,7 @@ using UnityEngine;
 using Core.Singelton;
 public class VFXManager : Singelton<VFXManager>
 {
+    public float DurationToDestroy = .1f;
     public enum VFXType
     {
         Jump,
@@ -20,6 +21,7 @@ public class VFXManager : Singelton<VFXManager>
             {
                 var item = Instantiate(i.pfefab);
                 item.transform.position = position;
+                Destroy(item, DurationToDestroy);
                 break;
 
             }
@@ -32,6 +34,7 @@ public class VFXManagerSetup
 {
     public VFXManager.VFXType Type;
     public GameObject pfefab;
+   
     
 
          

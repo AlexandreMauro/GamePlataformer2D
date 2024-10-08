@@ -10,6 +10,12 @@ public class GunBase : MonoBehaviour
     public float timeBetweenShoots = .1f;
     private Coroutine _currentCoroutine;
 
+
+    private void Awake()
+    {
+        PlayerSideReference = GameObject.FindObjectOfType<Player>().transform;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.J))
